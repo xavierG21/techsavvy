@@ -1,0 +1,41 @@
+html, body, .grid-container { height: 100%; margin: 0; }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Promo-Frame Website-Info-Frame . ."
+    "Service-Availability-Frame Website-Info-Frame . ."
+    ". . . .";
+}
+
+.Promo-Frame { grid-area: Promo-Frame; }
+
+.Website-Info-Frame {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    ". . .";
+  grid-area: Website-Info-Frame;
+}
+
+.Service-Availability-Frame { grid-area: Service-Availability-Frame; }
+
+
+/* For presentation only, no need to copy the code below */
+.grid-container * {
+  border: 1px solid red;
+  position: relative;
+}
+
+.grid-container *:after {
+  content:attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
